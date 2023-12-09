@@ -1,0 +1,26 @@
+server.py
+
+def email():
+    return r'\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b'
+
+def cellphone():
+    return r'\b(?:\+1[-. ]?)?\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}\b'
+
+def socialSecurity():
+    return r'\b\d{3}-\d{2}-\d{4}\b'
+
+def driversLicense():
+    return r'\b[A-Z0-9 -]+\b'
+
+def birthday():
+    return r'\b(?:0[1-9]|1[0-2])/(?:0[1-9]|[12][0-9]|3[01])/\d{4}\b'
+
+def switch_selection(selection):
+    pattern_dictionary = {
+        1: email,
+        2: cellphone,
+        3: socialSecurity,
+        4: driversLicense,
+        5: birthday,
+    }
+    return pattern_dictionary.get(selection)
