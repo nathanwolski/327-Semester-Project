@@ -3,13 +3,11 @@ network:
 
 volume: testText.txt
 	docker volume create shared_data
-	docker run -v shared_data:/data busybox sh -c "cp testText.txt /data"
-#change the name of the text file
+
 server:
-	python server.py
+	docker run -d --name server --network mynetwork -v shared_data:/data server", shell = True, check = True
 
 clean:
 	docker network rm mynetwork
-	rm pattern.txt
 
-all: clean network volume server
+all:  clean network volume server
