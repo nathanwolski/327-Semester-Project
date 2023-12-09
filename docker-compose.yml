@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  worker:
+    image: text-processing
+    volumes:
+      - shared_data:/app
+    networks:
+      - my_network
+
+  server:
+    image: server
+    volumes:
+      - shared_data:/app
+    networks:
+      - my_network
+
+networks:
+  my_network:
+
+volumes:
+  shared_data:
