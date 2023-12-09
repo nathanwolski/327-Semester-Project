@@ -1,7 +1,6 @@
 #split the text
 def textSegmentation(numProcesses):
-    #need to change file
-    with open('file.txt', 'r') as file:
+    with open('testText.txt', 'r') as file: #only access to the original text file
         text = file.read()
     segSize = len(text) // numProcesses
     segments =[]
