@@ -14,5 +14,3 @@ services:
 networks:
   my_network:
     driver: bridge
-
-#docker-compose up --scale worker=4
