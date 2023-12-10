@@ -3,21 +3,17 @@ version: '3'
 services:
   worker:
     image: text-processing
-    volumes:
-      - shared_data:/app
     networks:
       - my_network
 
   server:
     image: server
-    volumes:
-      - shared_data:/app
     networks:
       - my_network
+    command: python server.py
+    stdin_open: true
+    tty: true
 
 networks:
   my_network:
     driver: bridge
-
-volumes:
-  shared_data:
