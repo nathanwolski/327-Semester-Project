@@ -5,6 +5,10 @@ services:
     image: text-processing
     networks:
       - my_network
+    environment:
+      - SERVICE_PORT=5000
+    ports:
+      - "5000"
     command: python textFunctions.py
 
 networks:

@@ -29,4 +29,5 @@ def get_output():
     return Flask.send_file('/app/output.txt', as_attachment=True)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+    port = int(os.getenv('SERVICE_PORT', '5000'))  # Default port is 8080 if not specified
+    app.run(host='localhost', port=port)

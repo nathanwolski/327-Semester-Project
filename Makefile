@@ -1,6 +1,6 @@
 start_containers:
 	docker-compose build
-	docker-compose up --scale worker=4
+	docker-compose up -d --scale worker=4
 clean:
 	docker-compose down
 
