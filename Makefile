@@ -4,4 +4,4 @@ start_containers:
 clean:
 	docker-compose down
 
-all:  start_containers
+all:  clean start_containers

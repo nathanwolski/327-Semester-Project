@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 def pattern_match(text, pattern):
-    matches = re.findall(pattern, text)
+    matches = text.findall(pattern)
     return len(matches), matches
 
 def word_count(text):
@@ -28,5 +28,5 @@ def processText():
 def get_output():
     return Flask.send_file('/app/output.txt', as_attachment=True)
 
-if __name__ is "__main__":
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)

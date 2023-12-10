@@ -5,15 +5,10 @@ services:
     image: text-processing
     networks:
       - my_network
-
-  server:
-    image: server
-    networks:
-      - my_network
-    command: python server.py
-    stdin_open: true
-    tty: true
+    command: python textFunctions.py
 
 networks:
   my_network:
     driver: bridge
+
+#docker-compose up --scale worker=4
